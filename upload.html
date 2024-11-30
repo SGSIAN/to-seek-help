@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Artwork - Artify</title>
+    <link rel="stylesheet" href="upload.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Artify</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create.html">Create</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload">
+        <div class="upload-content">
+            <h2>Upload Artwork</h2>
+            <p>Fill in the details and upload your artwork to showcase it in our gallery.</p>
+            
+            <!-- Upload Form -->
+            <form action="http://localhost:5000/upload-artwork" method="POST" enctype="multipart/form-data">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+                <label for="title">Painting Title:</label>
+                <input type="text" id="title" name="title" required><br><br>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea><br><br>
+
+                <label for="artist-name">Artist Name:</label>
+                <input type="text" id="artist-name" name="artistName" required><br><br>
+
+                <label for="contact-id">Contact ID:</label>
+                <input type="text" id="contact-id" name="contactId" required><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Artify, All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

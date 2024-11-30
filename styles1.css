@@ -1,0 +1,174 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1a1a1a;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo h1 {
+    font-size: 32px;
+    color: #ff6f61;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://lh3.googleusercontent.com/fife/ALs6j_G2qMT7N2lJQ6wjFQL1ilXhfoPQNC1aJP0a8bDdtKYN2trV9KED_jQ7Rdv2hIOfB0RA0x3jxdA_blad9zACbNHybx3rjiBOnwjOPS_BSok_bB5e6PvRbvPGxDg6rkBe6Yr6_HSmfrQ3SQ74pfavdzyvr3h-lLChkSev6svLW0GdrcjvW_xphihmNzKBf2nEd7KCKo-cQ49TomSPiiJn31B8EzVR-zKaEe-7lFjItaBIjiJYDM4TQ-0prtWSl0L0KhW8Vkvl75U_4WSDDy4BQgPYOPM3veu-OXGPUosWDp1s6VuUIqUq8kSYvO1ZP2d9Q_Yi3e2CWsbHl28coNHok5P6zrFICZh2Do3XbMufa8l720Tw3IMC5tjptZmQacT9GlNDHUwrboRFykdkccSKBKGX4RwcoNQjeZdkygWyjBnshxGF6EtrqyLU6k1zah9OSFKqH0bibpbkBhWxQzZ6pdTR7xm5fecdkItvvvNZRFs6hilDVyUv_cTQ9YuhmIvoSqC-V2DHe8IvyXEcv8eU1btUeo58Tw4OR1ZzMuZRqBiEwiEHJlVZYltUOHqaXjUV_gKNwYUvK6Nh-pcDXwPdFTXABwRAcAhko_eNRYx5IPK_WZD6WM-SMvxKBMor2Ho5C4zIb-RbI6C1EhVlDV2RxBVBAkkQwpdkxgVV5-7MPq8stjBq0NS2jJlufznkwEKAXMwSRPiLcqYPh5E07I7wWiuFzMDrH7TRBlbPVngnVeDWdtVIxhPozPB4o6fqOeoQ_oQ9AOgWE9nw09Y6Qvk8x4D5N5VlePMQ7X7iqbIyuSOMCuBkC8t9bGy8HMAIKNRdb1tYmBVMYnluASnf__11DCj3-UtdSGOM1ygcCaGzXwReDUOc6WOqxy3Uq5rg79RIOynIZya2PHj70c7ItvoYt1pDkxe-pVsAJ8fszlUzKYuFFHU9UwpInJ1K5b3L6hoVU_oTGrW1zy-GsHlyX4o9J20lndfM0oz4ysrjRddB_MYVGIkN9gQQ3m_Qs7dR--6HoyxmKbaNaqLJJ0jCB7rQJgMXF-nlDrWWn_TM_I5NueaafrOmiy893UHc9_3mCiHnUpSpiCSd4Ia1oeL9oG3z0VQsT-FAz3AsALyZia_s-m6WpGGryQ8VU7xif7kf2Cr0An-2dDVokQe71v8NBaQso4_nb6ZpLPTLyUhVt1dRJJ0h6IC937JS2WE2QaaEnSeD3MY7WvJCSFC6iWN1hJASx55c745tZ7g0TAtXtuGv2BkiHJT1D_HzRV-tL5-Oe832NRDuwy9n52n6xraQlwI5TWJT_P0D5Ex_6RFByVB9vBbKSAenT9u5j8_17CpD3A=s512') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero .hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero .hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #ff6f61;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Keyframes for animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero .hero-content p {
+        font-size: 18px;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        margin-bottom: 20px;
+    }
+}

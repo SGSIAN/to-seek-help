@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .info {
+            padding: 10px;
+        }
+
+        .gallery-item h3 {
+            margin: 5px 0;
+        }
+
+        .gallery-item p {
+            margin: 0;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Artwork Gallery</h1>
+    </header>
+    <div class="gallery-container" id="gallery-container">
+        <!-- Gallery items will be inserted here dynamically -->
+    </div>
+    <footer>
+        <p>© 2024 Artwork Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch gallery data and populate the page
+       
+        async function loadGallery() {
+    const galleryContainer = document.getElementById('gallery-container');
+
+    try {
+        const response = await fetch('http://localhost:5000/api/gallery');
+        if (!response.ok) {
+            console.error('Error response:', response.status, response.statusText);
+            throw new Error('Failed to fetch gallery data');
+        }
+        const artworks = await response.json();
+
+        if (artworks.length === 0) {
+            galleryContainer.innerHTML = '<p>No artworks to display.</p>';
+            return;
+        }
+
+        artworks.forEach(artwork => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `
+                <img src="${artwork.imagePath}" alt="${artwork.title}">
+                <div class="info">
+                    <h3>${artwork.title}</h3>
+                    <p><strong>Artist:</strong> ${artwork.artistName}</p>
+                    <p>${artwork.description}</p>
+                </div>
+            `;
+            galleryContainer.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Error loading gallery:', error);
+        galleryContainer.innerHTML = '<p>Error loading gallery. Please try again later.</p>';
+    }
+}
+
+window.onload = loadGallery;
+
+    </script>
+</body>
+</html>
